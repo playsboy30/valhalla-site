@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Valhalla</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1 class="logo">Valhalla</h1>
+    <div id="menu-toggle">☰</div>
+    <nav id="side-menu">
+      <ul>
+        <li><a href="#contact">Contact Us</a></li>
+        <li><a href="#about">Who is Valhalla</a></li>
+        <li><a href="#cart">Shopcart</a></li>
+        <li><a href="#" onclick="changeLanguage()">Change Language</a></li>
+        <li><a href="#report">Report a Problem</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="products" class="grid"></section>
+
+    <section id="contact" class="hidden">
+      <h2>Contact Us</h2>
+      <button onclick="window.open('https://instagram.com', '_blank')">Instagram</button>
+      <button onclick="window.open('https://wa.me/1234567890', '_blank')">WhatsApp</button>
+    </section>
+
+    <section id="about" class="hidden">
+      <h2>Who is Valhalla?</h2>
+      <p>
+        We're a passionate group of high school teens creating a brand that offers top-tier quality at the lowest possible prices — delivering worldwide with heart and hustle.
+      </p>
+    </section>
+
+    <section id="cart" class="hidden">
+      <h2>Your Cart</h2>
+      <div id="cart-items"></div>
+      <p>Total: $<span id="cart-total">0.00</span></p>
+      <h3>Payment Info</h3>
+      <input type="text" placeholder="Credit Card / Vodafone Cash" />
+      <input type="text" placeholder="Your Location" />
+      <button onclick="confirmOrder()">Confirm Order</button>
+    </section>
+
+    <section id="report" class="hidden">
+      <h2>Report a Problem</h2>
+      <textarea id="problem-text" placeholder="Describe the issue..."></textarea>
+      <button onclick="submitProblem()">Submit</button>
+    </section>
+  </main>
+
+  <div id="product-modal" class="modal hidden">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <div id="modal-details"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
